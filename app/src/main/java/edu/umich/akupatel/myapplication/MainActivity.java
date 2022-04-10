@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
         getbyname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,""+etxt.getText(),Toast.LENGTH_SHORT).show();
+                weatherDataService.getWeatherByName(etxt.getText().toString());
+               //Toast.makeText(MainActivity.this,""+etxt.getText(),Toast.LENGTH_SHORT).show();
 
             }
         });

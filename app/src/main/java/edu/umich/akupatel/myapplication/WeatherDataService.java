@@ -137,6 +137,41 @@ public class WeatherDataService {
         MySingleton.getInstance(context).addToRequestQueue(request);
 
     }
+
+
+    public void getWeatherByName(String cityName){
+
+        String url = QUERY_FOR_CITY_ID + cityName;
+
+        JsonArrayRequest request = new JsonArrayRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            JSONObject cityInfo;
+                            for (int i = 0; i < response.length(); i++) {
+                                cityInfo = response.getJSONObject(i);
+                                cityID = cityInfo.getString("woeid");
+                                getCityForecastByID(cityID);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        //Toast.makeText(MainActivity.this,"City ID is: "+cityID,Toast.LENGTH_SHORT).show();
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, "Cannot get it", Toast.LENGTH_SHORT).show();
+                        // TODO: Handle error
+
+                    }
+                });
+        MySingleton.getInstance(context).addToRequestQueue(request);
+
+    }
 //    public List<WeatherReportModel> getCityForecastByName(String cityName){
 //
 //    }
