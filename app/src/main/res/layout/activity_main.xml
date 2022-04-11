@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="3"
+        android:weightSum="2"
         android:padding="2dp"
         >
 
@@ -19,17 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="12sp"
-            android:text="Get City ID"></Button>
-
-        <Button
-            android:id="@+id/btn_getByCityID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:textSize="12sp"
-            android:text="Weather By ID"></Button>
+            android:textSize="11sp"
+            android:text="Weather by Zip Code"></Button>
 
         <Button
             android:id="@+id/btn_getByName"

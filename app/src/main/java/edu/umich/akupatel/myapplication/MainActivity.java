@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         getid =  findViewById(R.id.btn_getCityID);
-        getbyid = findViewById(R.id.btn_getByCityID);
+       // getbyid = findViewById(R.id.btn_getByCityID);
         getbyname = findViewById(R.id.btn_getByName);
         etxt = findViewById(R.id.etxt);
         listView = findViewById(R.id.mylist);
 
         ArrayList arr = new ArrayList<String>();
 
-
+/*
 
         getbyid.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                weatherDataService.getCityForecastByID(etxt.getText().toString());
 
            }
-        });
-
+        });*/
+        //zipcode
         getid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
